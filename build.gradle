@@ -1,0 +1,51 @@
+plugins {
+    id 'ear'
+    id 'java'
+//    id 'war'
+}
+
+group 'ru.codicus'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    deploy project(path: ':HelloServletAndDBs', configuration: 'archives')
+    deploy project(path: ':TestPortletAndDbs', configuration: 'archives')
+    // The following dependencies will be the ear modules and
+    // will be placed in the ear root
+    // deploy project(':war')
+
+    // The following dependencies will become ear libs and will
+    // be placed in a dir configured via the libDirName property
+    // earlib group: 'log4j', name: 'log4j'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+ear {
+//    archiveName='PortletAndDBs.ear'
+    appDirName 'src/main/app'  // use application metadata found in this folder
+    // put dependent libraries into APP-INF/lib inside the generated EAR
+    libDirName 'APP-INF/lib'
+    deploymentDescriptor {  // custom entries for application.xml:
+//      fileName = "application.xml"  // same as the default value
+//      version = "6"  // same as the default value
+//      applicationName = "customear"
+        initializeInOrder = true
+      displayName = "HelloPortletAndDBs"  // defaults to project.name
+        // defaults to project.description if not set
+      description = "Testing Portlet and DBs"
+//      libraryDirectory = "APP-INF/lib"  // not needed, above libDirName setting does this
+//      module("my.jar", "java")  // won't deploy as my.jar isn't deploy dependency
+//      webModule("my.war", "/")  // won't deploy as my.war isn't deploy dependency
+      webModule("HelloServletAndDBs-1.0-SNAPSHOT.war", "/helloservlet")  // won't deploy as my.war isn't deploy dependency
+      webModule("TestPortletAndDbs-1.0-SNAPSHOT.war", "/helloportlet")  // won't deploy as my.war isn't deploy dependency
+//      securityRole "admin"
+//      securityRole "superadmin"
+    }
+}
