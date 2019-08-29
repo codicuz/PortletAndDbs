@@ -13,13 +13,13 @@
         <class>model.Topic</class>
 
         <properties>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
-            <property name="hibernate.show_sql" value="true" />
-            <property name="hibernate.hbm2ddl.auto" value="create" />
             <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521/orclpdb1" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@10.1.1.27:1521/orclpdb1" />
             <property name="javax.persistence.jdbc.user" value="helloservlet" />
             <property name="javax.persistence.jdbc.password" value="helloservlet_ss" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle12cDialect"/>
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="create" />
         </properties>
 
     </persistence-unit>

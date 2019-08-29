@@ -4,6 +4,7 @@
 package unittest;
 
 import model.Category;
+import model.Topic;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,6 +12,12 @@ import org.junit.Test;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -21,10 +28,14 @@ public class AppTest {
     public void init() {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("dbDS");
         em = emf.createEntityManager();
+        em.getTransaction().begin();
     }
 
     @After
     public void close() {
+        if (em.getTransaction().isActive()) {
+            em.getTransaction().commit();
+        }
         em.getEntityManagerFactory().close();
         em.close();
     }
@@ -40,6 +51,45 @@ public class AppTest {
         em.persist(cat);
     }
 
+    @Test
+    public void shouldFindCategory() {
+        Category cat = new Category();
+        cat.setTitle("test");
+        em.persist(cat);
+        Category result = em.find(Category.class, 1L);
+        assertNotNull(result);
+    }
+
+    @Test
+    public void shouldPersistCategoryAndTopics() {
+        Category cat = new Category();
+        cat.setTitle("test");
+        Topic topic = new Topic();
+        topic.setTitle("topic");
+        topic.setCategory(cat);
+        em.persist(cat);
+    }
+
+    @Test
+    public void shouldPerformQuery() {
+        Category cat = new Category();
+        cat.setTitle("query");
+        em.persist(cat);
+        Query query = em.createQuery("SELECT c from Category c WHERE c.title = 'query'");
+        assertNotNull(query.getSingleResult());
+    }
+
+    @Test
+    public void shouldFindWithCriteriaAPI() {
+        Category cat = new Category();
+        em.persist(cat);
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Category> query = cb.createQuery(Category.class);
+        Root<Category> c = query.from(Category.class);
+        query.select(c);
+        List<Category> resultList = em.createQuery(query).getResultList();
+        assertEquals(1, resultList.size());
+    }
 }
 
 

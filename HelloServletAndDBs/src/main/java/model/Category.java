@@ -1,8 +1,8 @@
 package model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Category {
@@ -11,6 +11,10 @@ public class Category {
     private Long id;
     private String title;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "topic_id")
+    private Set<Topic> topics = new HashSet<>();
+
     public String getTitle() {
         return title;
     }
@@ -18,4 +22,10 @@ public class Category {
     public void setTitle(String title) {
         this.title = title;
     }
+
+    public Set<Topic> getTopics() {
+        return topics;
+    }
+
+
 }
