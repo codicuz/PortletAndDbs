@@ -1,16 +1,12 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: codicus
-  Date: 27.08.2019
-  Time: 23:05
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
-</html>
+<form action="register.jsp" method="post">
+  <label for="nam">Name: </label>
+  <input type="text" id="nam" name="name"/><br><br/>
+  <label for="pas">Password: </label>
+  <input type="password" id="pas" name="password"/><br><br/>
+  <label for="ema">Email ID: </label>
+  <input type="text" id="ema" name="email"/><br><br/>
+  <input type="submit" value="register"/>
+</form>
+<form action="user-list.jsp" method="post">
+  <input type="submit" value="List All"/>
+</form>

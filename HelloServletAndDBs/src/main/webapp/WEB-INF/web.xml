@@ -4,6 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <servlet>
+        <description>This is description</description>
         <display-name>HelloServletName</display-name>
         <servlet-name>HelloServlet</servlet-name>
         <servlet-class>utils.HelloServlet</servlet-class>
@@ -11,6 +12,23 @@
 
     <servlet-mapping>
         <servlet-name>HelloServlet</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/class</url-pattern>
     </servlet-mapping>
+
+    <resource-ref>
+        <description>Primary database</description>
+        <res-ref-name>jdbc/SAMPLE</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+        <lookup-name>jdbc/testDB</lookup-name>
+    </resource-ref>
+
+
+<!--    <resource-env-ref>-->
+<!--        <resource-env-ref-name>jdbc/testDB</resource-env-ref-name>-->
+<!--        <resource-env-ref-type>javax.sql.DataSource</resource-env-ref-type>-->
+<!--        <lookup-name>jdbc/testDB</lookup-name>-->
+<!--    </resource-env-ref>-->
+
 </web-app>

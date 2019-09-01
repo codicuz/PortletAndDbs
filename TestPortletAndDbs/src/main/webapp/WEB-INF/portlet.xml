@@ -2,22 +2,22 @@
 <portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
              version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd
-                        http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd">
+             http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+             id="id.test.portlet">
     <portlet>
-        <description>Simplest Hello World Portlet is the very essence of every possible Portlet.</description>
-        <portlet-name>SimplestHelloWorldPortlet</portlet-name>
-        <display-name>Simplest Hello World Portlet</display-name>
+        <description>descr Simplest Hello World Portlet is the very essence of every possible Portlet.</description>
+        <portlet-name>pname SimplestHelloWorldPortlet</portlet-name>
+        <display-name>dname Simplest Hello World Portlet</display-name>
         <portlet-class>utils.HelloPortletAndDbs</portlet-class>
         <supports>
             <mime-type>text/html</mime-type>
             <portlet-mode>view</portlet-mode>
-            <!-- You can uncomment the other modes when your portlet-class supports them
-            <portlet-mode>edit</portlet-mode>
-            <portlet-mode>help</portlet-mode>
-            -->
         </supports>
+
         <portlet-info>
-            <title>Simplest Hello World Portlet</title>
+            <title>title Simplest Hello World Portlet</title>
+            <short-title>short-title TestPortlet</short-title>
+            <keywords>keywords TestPortlet</keywords>
         </portlet-info>
     </portlet>
 </portlet-app>
