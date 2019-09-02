@@ -3,30 +3,23 @@
  */
 package unittest;
 
-//import model.Category;
-//import model.Topic;
-//import org.junit.After;
-//import org.junit.Before;
-//import org.junit.Test;
-//
-//import javax.persistence.EntityManager;
-//import javax.persistence.EntityManagerFactory;
-//import javax.persistence.Persistence;
-//import javax.persistence.Query;
-//import javax.persistence.criteria.CriteriaBuilder;
-//import javax.persistence.criteria.CriteriaQuery;
-//import javax.persistence.criteria.Root;
-//
-//import java.util.List;
-//
-//import static org.junit.Assert.*;
+
+import dao.User;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 
 public class AppTest {
 //    private EntityManager em;
 //
 //    @Before
 //    public void init() {
-//        EntityManagerFactory emf = Persistence.createEntityManagerFactory("testDB");
+//        EntityManagerFactory emf = Persistence.createEntityManagerFactory("connDB", System.getProperties());
 //        em = emf.createEntityManager();
 //        em.getTransaction().begin();
 //    }
@@ -36,18 +29,18 @@ public class AppTest {
 //        if (em.getTransaction().isActive()) {
 //            em.getTransaction().commit();
 //        }
-//        em.getEntityManagerFactory().close();
+//
 //        em.close();
+//        em.getEntityManagerFactory().close();
 //    }
 //
-//    //    @Test public void shouldStartHibernate() {
-////        EntityManagerFactory emf = Persistence.createEntityManagerFactory("dbDS");
-////        EntityManager entityManager = emf.createEntityManager();
-////    }
+//
 //    @Test
 //    public void shouldPersistCategory() {
-//        Category cat = new Category();
-//        cat.setTitle("new Category");
+//        User cat = new User();
+//        cat.setEmail("mail");
+//        cat.setPassword("pass");
+//        cat.setName("name");
 //        em.persist(cat);
 //    }
 //

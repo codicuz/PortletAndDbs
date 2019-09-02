@@ -1,22 +1,17 @@
 package dao;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.boot.Metadata;
-import org.hibernate.boot.MetadataSources;
-import org.hibernate.boot.registry.StandardServiceRegistry;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
+import javax.annotation.Resource;
+import javax.naming.InitialContext;
+import javax.persistence.*;
+import javax.transaction.SystemException;
+import javax.transaction.Transaction;
+import javax.transaction.TransactionManager;
+import javax.transaction.UserTransaction;
 import java.util.List;
 
 public class UserDao {
 
-    public static int register(User u){
+    public int register(User u) throws Exception{
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("connDB");
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -28,8 +23,9 @@ public class UserDao {
         if (em.getTransaction().isActive()) {
             em.getTransaction().commit();
         }
-        em.getEntityManagerFactory().close();
+
         em.close();
+        em.getEntityManagerFactory().close();
 
         return i;
     }
@@ -38,11 +34,13 @@ public class UserDao {
     public static List<User> getAllUser() {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("connDB");
         EntityManager em = emf.createEntityManager();
-        em.getTransaction().begin();
-
         List < User > listOfUser = null;
+
         Query query = em.createQuery("SELECT c from User c");
         listOfUser = query.getResultList();
+
+        em.close();
+        em.getEntityManagerFactory().close();
 
         return listOfUser;
     }
