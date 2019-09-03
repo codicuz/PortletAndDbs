@@ -27,21 +27,16 @@ public class Dao {
     }
 
     public int addUser(User u) {
-//        EntityManagerFactory emff =  Persistence.createEntityManagerFactory("connDB");
-//        EntityManager emm = emff.createEntityManager();
-        UserTransaction ut;
-        int i = 0;
+        EntityManagerFactory emff =  Persistence.createEntityManagerFactory("connDB");
+        EntityManager emm = emff.createEntityManager();
+        EntityTransaction et = emm.getTransaction();
+        et.begin();
+        int i = 1;
 
-        try{
-            Context ctx = new InitialContext();
-            ut=(UserTransaction)ctx.lookup("java:comp/env/testDS");
-            ut.begin();
-            i = 1;
-            em.persist(u);
-            ut.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        emm.persist(u);
+        emm.getTransaction().commit();
+        emm.close();
+
         return i;
     }
 
