@@ -4,10 +4,7 @@
 package unittest;
 
 
-import dao.User;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import model.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

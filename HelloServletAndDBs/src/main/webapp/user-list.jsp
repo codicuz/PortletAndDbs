@@ -1,7 +1,8 @@
 <%@ page import="dao.UserDao" %>
-<%@ page import="dao.User" %>
+<%@ page import="model.User" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="dao.Dao" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
@@ -21,9 +22,10 @@
 
 <div align="center">
     <%
-//        UserDao ud = new UserDao();
+        Dao dao = new Dao();
         List<User> listUser = new ArrayList<>();
-        listUser = UserDao.getAllUser();
+        listUser = dao.getUsers();
+//        listUser = dao.getUsers();
         request.setAttribute("listUser", listUser);
     %>
     <table border="1" cellpadding="5">

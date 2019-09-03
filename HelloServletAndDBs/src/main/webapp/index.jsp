@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <form action="register.jsp" method="post">
   <label for="nam">Name: </label>
   <input type="text" id="nam" name="name"/><br><br/>
@@ -9,4 +10,8 @@
 </form>
 <form action="user-list.jsp" method="post">
   <input type="submit" value="List All"/>
+</form>
+
+<form action="class" method="get">
+  <input type="submit" value="Hello World"/>
 </form>

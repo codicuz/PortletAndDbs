@@ -16,18 +16,18 @@
 <!--        <non-jta-data-source>jdbc/testDB</non-jta-data-source>-->
 <!--        <jta-data-source>java:app/jdbc/testDB</jta-data-source>-->
 <!--        <jta-data-source>jdbc/testDB</jta-data-source>-->
-        <class>dao.User</class>
+        <class>model.User</class>
 <!--        <class>model.Topic</class>-->
-<!--        <class>dao.User</class>-->
+<!--        <class>model.User</class>-->
 
         <properties>
             <property name="openjpa.Log" value="SQL=TRACE"/>
+            <property name="openjpa.ConnectionFactoryProperties" value="PrettyPrint=true, PrettyPrintLineLength=72"/>
             <property name="openjpa.jdbc.DBDictionary" value="org.apache.openjpa.jdbc.sql.OracleDictionary"/>
             <property name="openjpa.jdbc.Schema" value="HELLOSERVLET"/>
-            <property name="openjpa.ConnectionFactoryProperties" value="PrintParameters=true"/>
             <property name="openjpa.RuntimeUnenhancedClasses" value="supported"/>
             <property name="openjpa.Compatibility" value="StrictIdentityValues=false"/>
-            <property name="openjpa.jdbc.QuerySQLCache" value="false"/>
+            <property name="openjpa.TransactionMode" value="local"/>
 <!--            <property name="openjpa.ConnectionDriverName" value="oracle.jdbc.OracleDriver"/>-->
 <!--            <property name="openjpa.ConnectionUserName" value="helloservlet"/>-->
 <!--            <property name="openjpa.ConnectionPassword" value="helloservlet_ss"/>-->
