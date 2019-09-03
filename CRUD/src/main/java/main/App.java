@@ -6,7 +6,7 @@ public class App {
         crudOperations.insertEntity();
         crudOperations.findEntity();
         crudOperations.updateEntity();
-        crudOperations.removeEntity();
+//        crudOperations.removeEntity();
 
         System.out.println("I'm all right!");
     }

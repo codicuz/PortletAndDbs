@@ -19,7 +19,7 @@ public class CRUDOperations {
     public void findEntity() {
         EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
         entityManager.getTransaction().begin();
-        Student student = entityManager.find(Student.class, 1);
+        Student student = entityManager.find(Student.class, 601);
         System.out.println("student id :: " + student.getId());
         System.out.println("student firstname :: " + student.getFirstName());
         System.out.println("student lastname :: " + student.getLastName());
@@ -32,7 +32,7 @@ public class CRUDOperations {
         EntityManager entityManager = JPAUtil.getEntityManagerFactory().createEntityManager();
         entityManager.getTransaction().begin();
 
-        Student student = entityManager.find(Student.class, 1);
+        Student student = entityManager.find(Student.class, 651);
         System.out.println("student id :: " + student.getId());
         System.out.println("student firstname :: " + student.getFirstName());
         System.out.println("student lastname :: " + student.getLastName());
