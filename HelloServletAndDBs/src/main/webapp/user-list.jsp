@@ -21,6 +21,7 @@
 
 <div align="center">
     <%
+//        UserDao ud = new UserDao();
         List<User> listUser = new ArrayList<>();
         listUser = UserDao.getAllUser();
         request.setAttribute("listUser", listUser);

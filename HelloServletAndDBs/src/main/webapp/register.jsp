@@ -5,9 +5,9 @@
 <jsp:setProperty property="*" name="obj"/>
 
 <%
-//    int i=UserDao.register(obj);
-    UserDao ud = new UserDao();
-    int i = ud.regi();
+    int i=UserDao.register(obj);
+//    UserDao ud = new UserDao();
+//    int i = UserDao.register(u);
     if(i>0)
         System.out.print("You are successfully registered");
 %>

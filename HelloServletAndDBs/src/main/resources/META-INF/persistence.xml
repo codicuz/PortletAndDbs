@@ -10,8 +10,8 @@
 
         <description>Persistence Unit For test</description>
         <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
-        <jta-data-source>java:comp/env/jdbc/SAMPLE</jta-data-source>
-        <non-jta-data-source>java:comp/env/jdbc/SAMPLE</non-jta-data-source>
+        <jta-data-source>java:comp/env/testDS</jta-data-source>
+        <non-jta-data-source>java:comp/env/testDS</non-jta-data-source>
 <!--        <jta-data-source>jdbc/testDB</jta-data-source>-->
 <!--        <non-jta-data-source>jdbc/testDB</non-jta-data-source>-->
 <!--        <jta-data-source>java:app/jdbc/testDB</jta-data-source>-->
@@ -22,16 +22,21 @@
 
         <properties>
             <property name="openjpa.Log" value="SQL=TRACE"/>
-<!--            <property name="openjpa.jdbc.DBDictionary" value="org.apache.openjpa.jdbc.sql.OracleDictionary"/>-->
-
+            <property name="openjpa.jdbc.DBDictionary" value="org.apache.openjpa.jdbc.sql.OracleDictionary"/>
+            <property name="openjpa.jdbc.Schema" value="HELLOSERVLET"/>
+            <property name="openjpa.ConnectionFactoryProperties" value="PrintParameters=true"/>
+            <property name="openjpa.RuntimeUnenhancedClasses" value="supported"/>
+            <property name="openjpa.Compatibility" value="StrictIdentityValues=false"/>
+            <property name="openjpa.jdbc.QuerySQLCache" value="false"/>
 <!--            <property name="openjpa.ConnectionDriverName" value="oracle.jdbc.OracleDriver"/>-->
 <!--            <property name="openjpa.ConnectionUserName" value="helloservlet"/>-->
 <!--            <property name="openjpa.ConnectionPassword" value="helloservlet_ss"/>-->
+<!--            <property name="openjpa.ConnectionURL" value="jdbc:oracle:thin:@10.1.1.27:1521/orclpdb1"/>-->
 <!--            <property name="openjpa.ConnectionRetainMode" value="transaction"/>-->
 <!--            <property name="openjpa.TransactionMode" value="local"/>-->
             
 <!--            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver" />-->
-<!--            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521/orclpdb1" />-->
+<!--            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@10.1.1.27:1521/orclpdb1" />-->
 <!--            <property name="javax.persistence.jdbc.user" value="helloservlet" />-->
 <!--            <property name="javax.persistence.jdbc.password" value="helloservlet_ss" />-->
 <!--            <property name="openjpa.jdbc.SynchronizeMappings" value="validate"/>-->

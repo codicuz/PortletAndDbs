@@ -17,18 +17,18 @@
 
     <resource-ref>
         <description>Primary database</description>
-        <res-ref-name>jdbc/SAMPLE</res-ref-name>
+        <res-ref-name>testDS</res-ref-name>
         <res-type>javax.sql.DataSource</res-type>
         <res-auth>Container</res-auth>
         <res-sharing-scope>Shareable</res-sharing-scope>
-        <lookup-name>jdbc/testDB</lookup-name>
+
     </resource-ref>
 
 
 <!--    <resource-env-ref>-->
-<!--        <resource-env-ref-name>jdbc/testDB</resource-env-ref-name>-->
+<!--        <resource-env-ref-name>testDS</resource-env-ref-name>-->
 <!--        <resource-env-ref-type>javax.sql.DataSource</resource-env-ref-type>-->
-<!--        <lookup-name>jdbc/testDB</lookup-name>-->
+<!--&lt;!&ndash;        <lookup-name>jdbc/testDB</lookup-name>&ndash;&gt;-->
 <!--    </resource-env-ref>-->
 
 </web-app>

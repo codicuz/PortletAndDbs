@@ -15,34 +15,34 @@ import javax.persistence.Persistence;
 
 
 public class AppTest {
-//    private EntityManager em;
-//
+    private EntityManager em;
+
 //    @Before
-//    public void init() {
-//        EntityManagerFactory emf = Persistence.createEntityManagerFactory("connDB", System.getProperties());
-//        em = emf.createEntityManager();
-//        em.getTransaction().begin();
-//    }
-//
+    public void init() {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("connDB", System.getProperties());
+        em = emf.createEntityManager();
+        em.getTransaction().begin();
+    }
+
 //    @After
-//    public void close() {
-//        if (em.getTransaction().isActive()) {
-//            em.getTransaction().commit();
-//        }
-//
-//        em.close();
-//        em.getEntityManagerFactory().close();
-//    }
-//
-//
+    public void close() {
+        if (em.getTransaction().isActive()) {
+            em.getTransaction().commit();
+        }
+
+        em.close();
+        em.getEntityManagerFactory().close();
+    }
+
+
 //    @Test
-//    public void shouldPersistCategory() {
-//        User cat = new User();
-//        cat.setEmail("mail");
-//        cat.setPassword("pass");
-//        cat.setName("name");
-//        em.persist(cat);
-//    }
+    public void shouldPersistCategory() {
+        User cat = new User();
+        cat.setEmail("mail");
+        cat.setPassword("pass");
+        cat.setName("name");
+        em.persist(cat);
+    }
 //
 //    @Test
 //    public void shouldFindCategory() {

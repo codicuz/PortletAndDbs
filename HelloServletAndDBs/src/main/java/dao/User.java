@@ -9,7 +9,15 @@ public class User {
     @Id
     @GeneratedValue
     private int id;
-    private String name,password,email;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "email")
+    private String email;
 
     public User() {
     }
