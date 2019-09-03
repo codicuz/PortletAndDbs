@@ -1,6 +1,4 @@
 rootProject.name = 'PortletAndDBs'
-include 'TestPortletAndDbs'
 include 'HelloServletAndDBs'
-//include 'HelloServletAndDBs2'
-include 'testJSP'
+include 'CRUD'
 
