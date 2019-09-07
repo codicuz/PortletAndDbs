@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-    deploy project(path: ':HelloServletAndDBs', configuration: 'archives')
+//    deploy project(path: ':HelloServletAndDBs', configuration: 'archives')
 //    deploy project(path: ':HelloServletAndDBs2', configuration: 'archives')
     deploy project(path: ':TestPortletAndDbs', configuration: 'archives')
     // The following dependencies will be the ear modules and
@@ -44,7 +44,7 @@ ear {
 //      libraryDirectory = "APP-INF/lib"  // not needed, above libDirName setting does this
 //      module("my.jar", "java")  // won't deploy as my.jar isn't deploy dependency
 //      webModule("my.war", "/")  // won't deploy as my.war isn't deploy dependency
-      webModule("HelloServletAndDBs-1.0-SNAPSHOT.war", "/helloservlet")  // won't deploy as my.war isn't deploy dependency
+//      webModule("HelloServletAndDBs-1.0-SNAPSHOT.war", "/helloservlet")  // won't deploy as my.war isn't deploy dependency
 //      webModule("HelloServletAndDBs2-1.0-SNAPSHOT.war", "/helloservlet2")  // won't deploy as my.war isn't deploy dependency
       webModule("TestPortletAndDbs-1.0-SNAPSHOT.war", "/helloportlet")  // won't deploy as my.war isn't deploy dependency
 //      securityRole "admin"
