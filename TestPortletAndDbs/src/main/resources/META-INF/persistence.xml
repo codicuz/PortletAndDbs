@@ -14,7 +14,8 @@
         <class>model.User</class>
 
         <properties>
-            <property name="openjpa.Log" value="DefaultLevel=WARN, Runtime=TRACE, Tool=TRACE, SQL=TRACE, JDBC=TRACE"/>
+<!--            <property name="openjpa.Log" value="DefaultLevel=WARN, Runtime=TRACE, Tool=TRACE, SQL=TRACE, JDBC=TRACE"/>-->
+            <property name="openjpa.Log" value="SQL=TRACE"/>
             <property name="openjpa.ConnectionFactoryProperties" value="PrettyPrint=true, PrettyPrintLineLength=72"/>
             <property name="openjpa.jdbc.Schema" value="HELLOSERVLET"/>
             <property name="openjpa.RuntimeUnenhancedClasses" value="supported"/>

@@ -2,8 +2,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--<%@taglib uri="http://java.sun.com/portlet" prefix="portlet" %>--%>
 <%@taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet"%>
+<html>
+<head>
+  <title>User Management Application</title>
+</head>
+<body>
+<portlet:actionURL name="action-register" var="register">
+</portlet:actionURL>
+<portlet:defineObjects />
 
-<form action="register.jsp" method="post">
+<form action="${register}" method="post">
   <label for="nam">Name: </label>
   <input type="text" id="nam" name="name"/><br><br/>
   <label for="pas">Password: </label>
@@ -13,14 +21,12 @@
   <input type="submit" value="register"/>
 </form>
 
-<%--<a href="<portlet:renderURL>  <portlet:param name="myRenderParameter" value="someValue"/>  </portlet:renderURL>">This is the text for the link</a>--%>
+<portlet:actionURL name="action-list" var="list">
+</portlet:actionURL>
+<portlet:defineObjects />
 
-<form action="user-list.jsp" method="post">
-  <input type="submit" value="List All"/>
+<form action="${list}" method="post">
+  <input type="submit" value="List Users"/>
 </form>
-
-<portlet:renderURL var="jobStatusURL">
-  <portlet:param name="jspPage" value="/html/user-list.jsp" />
-  <portlet:param name="tabs" value="JobStatus" />
-</portlet:renderURL>
-<button onclick="location.ahref='<%System.out.println("ddfddf");%>';">click me</button>
+</body>
+</html>
