@@ -14,4 +14,25 @@ public class HelloPortletAndDbs extends GenericPortlet {
         PortletRequestDispatcher rd = getPortletContext().getRequestDispatcher("/html/index.jsp");
         rd.include(request, response);
     }
+
+    @Override
+    protected void doEdit(RenderRequest request, RenderResponse response) throws PortletException, IOException {
+        response.setContentType(request.getResponseContentType());
+        PortletRequestDispatcher rd = getPortletContext().getRequestDispatcher("/html/edit.jsp");
+        rd.include(request, response);
+
+    }
+
+    @Override
+    protected void doHelp(RenderRequest request, RenderResponse response) throws PortletException, IOException {
+        response.setContentType(request.getResponseContentType());
+        PortletRequestDispatcher rd = getPortletContext().getRequestDispatcher("/html/help.jsp");
+        rd.include(request, response);
+    }
+
+
+    public void action1(ActionRequest request, ActionResponse response)
+            throws IOException, PortletException{
+        System.out.println("fuck my big tits");
+    }
 }

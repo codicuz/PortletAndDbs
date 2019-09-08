@@ -14,4 +14,19 @@
         <res-sharing-scope>Shareable</res-sharing-scope>
     </resource-ref>
 
+    <servlet>
+        <description>Hello Portlet Servelt</description>
+        <display-name>HelloPortletServlet</display-name>
+        <servlet-name>helloPortletServlet</servlet-name>
+        <servlet-class>utils.HelloPortletServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>helloPortletServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <context-param>
+        <param-name>namespace</param-name>
+        <param-value>/html/.*</param-value>
+    </context-param>
 </web-app>
