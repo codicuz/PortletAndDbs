@@ -14,10 +14,11 @@ repositories {
 }
 
 dependencies {
-    compile group: 'org.apache.openjpa', name: 'openjpa-persistence-jdbc', version: '3.1.0'
+    providedCompile group: 'org.apache.openjpa', name: 'openjpa-persistence-jdbc', version: '3.1.0'
 
 //    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.3.0.Final'
-    compile group: 'com.oracle', name: 'ojdbc8', version: '8C'
+//    compile group: 'com.oracle', name: 'ojdbc8', version: '8C'
+    compile group: 'javax.ejb', name: 'javax.ejb-api', version: '3.2'
     compile group: 'org.eclipse.jetty', name: 'apache-jstl', version: '9.4.20.v20190813'
 
     providedCompile 'javax.servlet:servlet-api:2.5'

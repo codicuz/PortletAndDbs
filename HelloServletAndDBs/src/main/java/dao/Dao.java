@@ -2,42 +2,35 @@ package dao;
 
 import model.User;
 
-import javax.annotation.Resource;
-import javax.naming.Context;
-import javax.naming.InitialContext;
 import javax.persistence.*;
-import javax.transaction.UserTransaction;
+
+
 import java.util.List;
 
 public class Dao {
-    @PersistenceContext(unitName = "connDB")
-    private EntityManager em;
+
+    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("connDB");
+    private EntityManager em = emf.createEntityManager();
 
     @SuppressWarnings("unchecked")
     public List<User> getUsers() {
-        EntityManagerFactory emff =  Persistence.createEntityManagerFactory("connDB");
-        EntityManager emm = emff.createEntityManager();
-//        ut.begin();
-//        em = emf.createEntityManager();
 
-        Query query = emm.createQuery("select c from User c");
-
-
+        Query query = em.createQuery("select c from User c");
         return query.getResultList();
     }
 
-    public int addUser(User u) {
-        EntityManagerFactory emff =  Persistence.createEntityManagerFactory("connDB");
-        EntityManager emm = emff.createEntityManager();
-        EntityTransaction et = emm.getTransaction();
-        et.begin();
+    public int addUser(User u) throws Exception {
         int i = 1;
 
-        emm.persist(u);
-        emm.getTransaction().commit();
-        emm.close();
+//        User us = new User();
+//        us.setEmail("MyEmail2");
+//        us.setPassword("MyPassword2");
+//        us.setName("MyName2");
+
+        em.getTransaction().begin();
+        em.persist(u);
+        em.getTransaction().commit();
 
         return i;
     }
-
 }

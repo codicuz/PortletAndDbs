@@ -23,9 +23,7 @@
 <div align="center">
     <%
         Dao dao = new Dao();
-        List<User> listUser = new ArrayList<>();
-        listUser = dao.getUsers();
-//        listUser = dao.getUsers();
+        List<User> listUser = dao.getUsers();
         request.setAttribute("listUser", listUser);
     %>
     <table border="1" cellpadding="5">
