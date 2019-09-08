@@ -7,5 +7,6 @@
 
 	<virtual-host name="default_host" />
 
+	<resource-ref name="helloservletDS" binding-name="jdbc/testDB"/>
 
 </web-bnd>

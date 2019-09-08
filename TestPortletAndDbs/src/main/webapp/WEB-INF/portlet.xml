@@ -8,7 +8,7 @@
         <description>descr Simplest Hello World Portlet is the very essence of every possible Portlet.</description>
         <portlet-name>pname SimplestHelloWorldPortlet</portlet-name>
         <display-name>dname Simplest Hello World Portlet</display-name>
-        <portlet-class>utils.HelloPortletAndDbs</portlet-class>
+        <portlet-class>utils.UserList</portlet-class>
         <supports>
             <mime-type>text/html</mime-type>
             <portlet-mode>view</portlet-mode>

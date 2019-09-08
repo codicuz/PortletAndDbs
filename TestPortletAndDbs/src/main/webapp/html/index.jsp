@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <form action="register.jsp" method="post">
   <label for="nam">Name: </label>
   <input type="text" id="nam" name="name"/><br><br/>
