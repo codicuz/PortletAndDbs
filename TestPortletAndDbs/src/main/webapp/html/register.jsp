@@ -5,13 +5,8 @@
 <%@taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet"%>
 
 
-
 <%
-//    int i=UserDao.register(obj);
-    Dao dao = new Dao();
-    int i = dao.addUser(obj);
-    if(i>0)
-        System.out.print("You are successfully registered");
+    System.out.println("I'm a register.jsp page");
 %>
 
 <portlet:actionURL name="action-view" var="view">

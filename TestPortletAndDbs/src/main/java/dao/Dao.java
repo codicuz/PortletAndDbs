@@ -18,8 +18,7 @@ public class Dao {
         return query.getResultList();
     }
 
-    public int addUser(User u) throws Exception {
-        int i = 1;
+    public String addUser() throws Exception {
 
         User us = new User();
         us.setEmail("MyEmail3");
@@ -30,6 +29,7 @@ public class Dao {
         em.persist(us);
         em.getTransaction().commit();
 
-        return i;
+        return us.toString();
+
     }
 }

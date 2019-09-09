@@ -38,9 +38,9 @@
             <portlet-mode>HELP</portlet-mode>
         </supports>
 
-        <supported-locale>en</supported-locale>
+<!--        <supported-locale>en</supported-locale>-->
 
-        <resource-bundle>message</resource-bundle>
+<!--        <resource-bundle>message</resource-bundle>-->
         <portlet-info>
             <title>title portlet2 </title>
             <short-title>short-title portlet2</short-title>
@@ -60,9 +60,9 @@
             <portlet-mode>VIEW</portlet-mode>
         </supports>
 
-        <supported-locale>en</supported-locale>
+<!--        <supported-locale>en</supported-locale>-->
 
-        <resource-bundle>message</resource-bundle>
+<!--        <resource-bundle>message</resource-bundle>-->
         <portlet-info>
             <title>title Portlet3</title>
             <short-title>short-title Portlet3</short-title>
