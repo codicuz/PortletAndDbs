@@ -24,5 +24,5 @@ html.html() {
         }
     }
 }
-
+System.out.println("this is console message")
 println("This is groovy pages")
