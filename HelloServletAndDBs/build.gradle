@@ -15,6 +15,9 @@ repositories {
 
 dependencies {
     providedCompile group: 'org.apache.openjpa', name: 'openjpa-persistence-jdbc', version: '3.1.0'
+//    compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.5.8', ext: 'pom'
+    compile group: 'org.codehaus.groovy', name: 'groovy-servlet', version: '2.5.8'
+    compile group: 'org.codehaus.groovy', name: 'groovy-json', version: '2.5.8'
 
 //    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.3.0.Final'
 //    compile group: 'com.oracle', name: 'ojdbc8', version: '8C'
